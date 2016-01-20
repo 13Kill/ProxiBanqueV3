@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/template/layout.xhtml">
+	<ui:define name="content">
+		<center>
+			<h:form id="formDataTable">
+				<p:growl id="msgs" showDetail="true" />
+				<p:dataTable var="Client" value="#{BeanCns.listClient}"
+					selection="#{BeanCns.selectClient}" selectionMode="single"
+					style="width: 700" rowKey="#{Client.id}" first="#{Client.id}"
+					widgetVar="UserTable" paginator="false" rows="5" editable="true">
+					<p:ajax event="rowEdit" listener="#{BeanCns.onRowEdit}"
+						update=":formDataTable:msgs" />
+					<p:ajax event="rowEditCancel" listener="#{BeanCns.onRowCancel}"
+						update=":formDataTable:msgs" />
+					<p:column sortBy="#{Client.nom}">
+						<f:facet name="header">
+							<h:outputText value="Nom" />
+						</f:facet>
+						<p:cellEditor>
+							<f:facet name="output">
+								<h:outputText value="#{Client.nom}" />
+							</f:facet>
+							<f:facet name="input">
+								<h:inputText value="#{Client.nom}" />
+							</f:facet>
+						</p:cellEditor>
+					</p:column>
+					<p:column sortBy="#{Client.prenom}">
+						<f:facet name="header">
+							<h:outputText value="Prenom" />
+						</f:facet>
+						<p:cellEditor>
+							<f:facet name="output">
+								<h:outputText value="#{Client.prenom}" />
+							</f:facet>
+							<f:facet name="input">
+								<h:inputText value="#{Client.prenom}" />
+							</f:facet>
+						</p:cellEditor>
+					</p:column>
+					<p:column sortBy="#{Client.telephone}">
+						<f:facet name="header">
+							<h:outputText value="Telepehone" />
+						</f:facet>
+						<p:cellEditor>
+							<f:facet name="output">
+								<h:outputText value="#{Client.telephone}" />
+							</f:facet>
+							<f:facet name="input">
+								<h:inputText value="#{Client.telephone}" />
+							</f:facet>
+						</p:cellEditor>
+					</p:column>
+					<p:column sortBy="#{Client.ville}">
+						<f:facet name="header">
+							<h:outputText value="Ville" />
+						</f:facet>
+						<p:cellEditor>
+							<f:facet name="output">
+								<h:outputText value="#{Client.ville}" />
+							</f:facet>
+							<f:facet name="input">
+								<h:inputText value="#{Client.ville}" />
+							</f:facet>
+						</p:cellEditor>
+					</p:column>
+					<p:column sortBy="#{Client.codePostal}">
+						<f:facet name="header">
+							<h:outputText value="Code Postal" />
+						</f:facet>
+						<p:cellEditor>
+							<f:facet name="output">
+								<h:outputText value="#{Client.codePostal}" />
+							</f:facet>
+							<f:facet name="input">
+								<h:inputText value="#{Client.codePostal}" />
+							</f:facet>
+						</p:cellEditor>
+					</p:column>
+					<p:column style="text-align: center;">
+						<h:link value="voir comptes" outcome="bankaccount">
+							<f:param name="client" value="#{Client.id}" />
+						</h:link>
+					</p:column>
+					<p:column style="width:32px">
+						<p:rowEditor />
+					</p:column>
+				</p:dataTable>
+			</h:form>
+		</center>
+	</ui:define>
+</ui:composition>
+</html>

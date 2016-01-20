@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+
+<h:head>
+	<title>formulaire de création de conseiller</title>
+</h:head>
+<ui:composition template="/template/layout.xhtml">
+	<ui:define name="content">
+		<center>
+			<f:view>
+				<h:form>
+					<h:panelGrid columns="2" cellpadding="5">
+						<h:outputLabel for="nom" value="Nom" />
+						<h:inputText id="nom" value="#{BeanCli.nom}" />
+
+						<h:outputLabel for="prenom" value="Prenom" />
+						<h:inputText id="prenom" value="#{BeanCli.prenom}" />
+
+						<h:outputLabel for="adresse" value="Adresse" />
+						<h:inputText id="adresse" value="#{BeanCli.adresse}" />
+
+						<h:outputLabel for="codePostal" value="Code Postal" />
+						<h:inputText id="codePostal" value="#{BeanCli.codePostal}" />
+
+						<h:outputLabel for="ville" value="Ville" />
+						<h:inputText id="ville" value="#{BeanCli.ville}" />
+
+						<h:outputLabel for="telephone" value="Téléphone" />
+						<h:inputText id="telephone" value="#{BeanCli.telephone}" />
+
+					</h:panelGrid>
+					<p>
+						<h:commandButton value="Création d'un client"
+							action="#{BeanCli.creationClient}" />
+					</p>
+				</h:form>
+			</f:view>
+		</center>
+	</ui:define>
+</ui:composition>
+</html>

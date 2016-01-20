@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<!-- permet de déclarer une ressource qui se trouve dans le dossier css du dossier parent resources -->
+	<h:outputStylesheet name="bootstrap/css/bootstrap-theme.css" />
+	<h:outputStylesheet name="bootstrap/css/bootstrap.min.css" />
+	<h:outputStylesheet name="bootstrap/css/background.css" />
+	<!-- 	<h:outputStylesheet name="bootstrap/css/font-awesome.min.css" /> -->
+	<h:outputStylesheet name="bootstrap/css/main.css" />
+
+	<script
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script
+		src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+	<h:outputScript name="bootstrap/js/headroom.min.js"></h:outputScript>
+	<h:outputScript name="bootstrap/js/jQuery.headroom.min.js"></h:outputScript>
+	<h:outputScript name="bootstrap/js/template.js"></h:outputScript>
+</h:head>
+<body class="home">
+	<ui:composition>
+		<!-- Fixed navbar -->
+		<div class="navbar navbar-inverse navbar-fixed-top headroom">
+			<div class="container">
+				<div class="navbar-header">
+					<!-- Button for smallest screens -->
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target=".navbar-collapse">
+						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<h:graphicImage name="/assets/images/logo.png" />
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav pull-right">
+						<li><a href="home.xhtml">Modifier client</a></li>
+						<li><a href="createConseiller.xhtml">Nouveau conseiller</a></li>
+						<li><a href="createClient.xhtml">Créer client</a></li>
+						<li><a class="btn" href="validationConseiller.xhtml">ESPACE	CONSEILLER</a></li>
+					</ul>
+					<h:form id="logout">
+						<p:commandButton value="Se déconnecter" id="LogoutButton"
+							actionListerner="#{BeanCns.logout}" ajax="false" />
+					</h:form>
+				</div>
+				<!--/.nav-collapse -->
+			</div>
+		</div>
+		<!-- /.navbar -->
+		<header id="head" class="secondary"></header>
+	</ui:composition>
+</body>
+</html>
+
+

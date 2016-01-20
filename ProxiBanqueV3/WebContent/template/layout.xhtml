@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<!-- permet de déclarer une ressource qui se trouve dans le dossier css du dossier parent resources -->
+	<h:outputStylesheet name="bootstrap/css/bootstrap-theme.css" />
+	<h:outputStylesheet name="bootstrap/css/bootstrap.min.css" />
+	<h:outputStylesheet name="bootstrap/css/background.css" />
+	<!-- 	<h:outputStylesheet name="bootstrap/css/font-awesome.min.css" /> -->
+	<h:outputStylesheet name="bootstrap/css/main.css" />
+
+	<script
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script
+		src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+	<h:outputScript name="bootstrap/js/headroom.min.js"></h:outputScript>
+	<h:outputScript name="bootstrap/js/jQuery.headroom.min.js"></h:outputScript>
+	<h:outputScript name="bootstrap/js/template.js"></h:outputScript>
+</h:head>
+<h:body>
+	<div id="page">
+		<!-- La div avec le id= header, Represente le header  -->
+		<div id="head" class="secondary">
+			<ui:insert name="header">
+				<ui:include src="/template/header.xhtml">
+				</ui:include>
+			</ui:insert>
+		</div>
+		<!-- La div avec le id= content, Represente le contenu spécifique à chaque vue  -->
+		<div id="content">
+			<ui:insert name="content">
+				Vive Hédi, vive Denzel Washingtown!
+			</ui:insert>
+		</div>
+		<!-- La div avec le id= footer, Represente le contenu spécifique au pied de page par défaut  -->
+		<div id="footer" class="top-space">
+			<ui:insert name="footer">
+				<ui:include src="/template/footer.xhtml">
+					<ui:param name="auteur" value="www.objis.com" />
+				</ui:include>
+			</ui:insert>
+		</div>
+	</div>
+</h:body>
+</html>

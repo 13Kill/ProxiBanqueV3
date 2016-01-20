@@ -1,0 +1,13 @@
+#manonfire {
+    background: url(../images/Denzel-Washington.png);
+    background-size:25%;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+} 
+
+#avis {
+    background: url(../images/AVIS.jpg);
+    background-size: 20%;
+    background-repeat: no-repeat;
+    background-position: right top;
+} 
